@@ -15,17 +15,10 @@ class The300WLPDataset(Dataset):
     def __init__(self, opts, is_train):
         super().__init__()
         self.opts = opts
-        # self.train_list_dict = {"300W-LP": "300w_lp_train.txt", 
-        #                         "BIWI": "biwi_train.txt"}
-        # self.test_list_dict = {"300W-LP": "300w_lp_test.txt", 
-        #                        "AFLW2000": "300w_lp_test.txt", 
-        #                         "BIWI": "biwi_all.txt"}
         if is_train:
             self.dataset_path = self.opts.train_dataset_path
-            # self.img_list_filename = self.train_list_dict[self.opts.train_dataset]
         else:
             self.dataset_path = self.opts.val_dataset_path
-            # self.img_list_filename = self.test_list_dict[self.opts.val_dataset]
 
         self.img_list = []
         self.label_list = []
@@ -40,12 +33,6 @@ class The300WLPDataset(Dataset):
         self.img_size = self.opts.img_size
         self.rot_type = self.opts.rot_type
         self.is_train = is_train
-
-        # with open(self.img_list_filename, "r") as f:
-        #     fts = f.read().splitlines()
-        #     self.img_list = [os.path.join(self.dataset_path, "imgs", x) for x in fts]
-        #     self.label_list = [x.replace("imgs/", "labels/").replace(".jpg", ".txt") for x in self.img_list]
-
         self.length = len(self.img_list)
 
 
