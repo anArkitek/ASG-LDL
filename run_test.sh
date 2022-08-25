@@ -1,0 +1,1 @@
+python tester.py --val_dataset AFLW2000 --snapshot_path ./snapshot/

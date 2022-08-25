@@ -1,3 +1,7 @@
 __pycache__
-
 **/__pycache__
+.vscode
+experiment_record
+saved_model
+ASG_saved_model
+saved_tensorboard
